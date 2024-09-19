@@ -1,9 +1,9 @@
-require('dotenv').config();
 const TelegramBot = require('node-telegram-bot-api');
 const axios = require('axios');
+const config = require('../config'); // Adjust path based on your project structure
 
-// Initialize the bot with your token
-const token = process.env.TELEGRAM_TOKEN;
+// Initialize the bot with your token from config.js
+const token = config.telegramToken;
 const bot = new TelegramBot(token, { polling: true });
 
 // Helper function to validate SK key by making a request to Stripe's API
